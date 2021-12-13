@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+body{
+    background-color: hsl(240, 78%, 98%);
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.background{
+    position: absolute;
+}
+
+.kanan{
+    z-index: -3;
+    position: absolute;
+    right: 0;
+}
+
+.kiri{
+    z-index: -2;
+    position: absolute;
+    bottom: 0;
+}
+.content{
+   width: 80%;
+   margin: auto;
+   padding-top: 50px;
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 0.1fr 0.2fr 1fr;
+   grid-template-areas: "judul"
+                        "switch"
+                        "card";
+
+}
+
+.judul{
+    grid-area: judul;
+    text-align: center;
+    font-size: 30px;
+    color: hsl(233, 13%, 49%);
+}
+
+.switch{
+    color: hsl(234, 14%, 74%);
+    margin-top: 30px;
+    text-align: center;
+    grid-area: switch;
+}
+
+.card{
+    color: hsl(233, 13%, 49%) ;
+    grid-area: card;
+    width: 100%;
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: none;
+    grid-template-areas: "basic profesional master";
+}
+
+.title{
+    color: hsl(233, 13%, 49%) ;
+    font-size: 20px;
+}
+
+.price{
+    margin: 30px 0;
+    font-size: 60px;
+    color: hsl(233, 13%, 49%) ;
+}
+
+hr{
+    opacity: 0.5;
+    border: none;
+    height: 1px;
+    background-color: hsl(233, 13%, 49%);
+    width: 80%;
+    margin-top: 15px;   
+    margin-bottom: 15px;   
+    text-align: center;
+}
+
+.basic{
+    padding:20px 0;
+    text-align: center; 
+    background-color: #fafafa;   
+    grid-area: basic;
+    box-shadow: 0px 13px 39px -15px #c2c2c2;
+    border-radius: 10px 0 0 10px;
+}
+
+.profesional{
+    border-radius: 10px;
+    margin-top: -20px;
+    margin-bottom: -20px;
+    padding-top: 40px;
+    color: #fafafa;
+    text-align: center;
+    grid-area: profesional;
+    box-shadow: 9px 13px 40px -19px hsl(237, 63%, 64%);
+    background-image: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));;
+}
+
+.profesional>hr{
+        background-color: #fafafa;
+}
+
+.profesional>.title{
+    color: #fafafa;
+}
+
+.profesional>.price{
+    color: #fafafa;
+}
+
+.master{
+    padding:20px 0;
+    text-align: center;
+    background-color: #fafafa;
+    box-shadow: 0px 13px 39px -15px #c2c2c2;
+    grid-area: master;
+    border-radius: 0 10px 10px 0;
+}
