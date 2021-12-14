@@ -22,20 +22,24 @@
 
     <div class="content">
         <div class="judul"> Our Pricing </div>
-        <div class="switch">
-            Annually 
+        <div class="togle">
+            <div class="anuali">
+                Annually 
+            </div>
             
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" id="switch" value="ONN" onclick="javascript:toggle(this);" >
                 <span class="slider round"></span>
             </label> 
-              
-              Monthly
+            
+            <div class="bulan">
+                Monthly
+            </div>
         </div>
         <div class="card">
             <div class="basic">
-                <div class="title">basic</div>
-                <div class="price">&dollar;19.99</div>
+                <div class="title">Basic</div>
+                <div class="price" id="basic">&dollar;19.99</div>
                 <hr>
                 500 GB Storage
                 <hr>
@@ -43,11 +47,14 @@
                 <hr>
                 Send up to 3 GB
                 <hr>
+                <div class="button">
+                    LEARN MORE
+                </div>
                 
             </div>
             <div class="profesional">
-                <div class="title">profesional</div>
-                <div class="price">&dollar;24.99</div>
+                <div class="title">Profesional</div>
+                <div class="price" id="profesional">&dollar;24.99</div>
                 <hr>
                 1 TB Storage
                 <hr>
@@ -55,11 +62,14 @@
                 <hr>
                 Send up to 10 GB
                 <hr>
+                <div class="buttonp">
+                    LEARN MORE
+                </div>
                 
             </div>
             <div class="master">
-                <div class="title">master</div>
-                <div class="price">&dollar;39.99</div>
+                <div class="title" >Master</div>
+                <div class="price" id="master">&dollar;39.99</div>
                 <hr>
                 2 TB Storage
                 <hr>
@@ -67,9 +77,35 @@
                 <hr>
                 Send up to 20 GB
                 <hr>
+                <div class="button">
+                    LEARN MORE
+                </div>
                 
             </div>
         </div>
     </div>
+
+    <script>
+        let x = document.getElementById("switch").value;
+        console.log(x);
+
+        function toggle(checkbox) {
+    switch (checkbox.value) {
+        case "ONN":
+            checkbox.value = "OFF";
+            document.getElementById("basic").innerHTML= "&dollar;249.99";
+            document.getElementById("profesional").innerHTML= "&dollar;249.99";
+            document.getElementById("master").innerHTML= "&dollar;249.99";
+            break;
+        case "OFF":
+            checkbox.value = "ONN";
+            document.getElementById("basic").innerHTML= "&dollar;19.99";
+            document.getElementById("profesional").innerHTML= "&dollar;24.99";
+            document.getElementById("master").innerHTML= "&dollar;39.99";
+            break;
+    }
+}
+
+    </script>
 </body>
 </html>

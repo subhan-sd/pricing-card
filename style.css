@@ -11,13 +11,13 @@ body{
 
 .kanan{
     z-index: -3;
-    position: absolute;
+    position: fixed;
     right: 0;
 }
 
 .kiri{
     z-index: -2;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 .content{
@@ -40,18 +40,39 @@ body{
     color: hsl(233, 13%, 49%);
 }
 
-.switch{
+.togle{
     color: hsl(234, 14%, 74%);
     margin-top: 30px;
     text-align: center;
     grid-area: switch;
+    margin: auto;
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: none;
+   grid-template-areas: "anuali togle bulan";
+}
+.anuali{
+    font-size: 15px;
+    padding-top: 8px;
+    grid-area: anuali;
 }
 
+.switch{
+    margin: auto;
+    grid-area: togle;
+}
+
+.bulan{
+    padding-top: 8px;
+    grid-area: bulan;
+}
 .card{
+    margin: auto;
     color: hsl(233, 13%, 49%) ;
     grid-area: card;
-    width: 100%;
-    padding-top: 30px;
+    width: 90%;
+    padding-top: 60px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: none;
@@ -66,7 +87,7 @@ body{
 .price{
     margin: 30px 0;
     font-size: 60px;
-    color: hsl(233, 13%, 49%) ;
+    color: hsl(232, 13%, 33%) ;
 }
 
 hr{
@@ -81,9 +102,9 @@ hr{
 }
 
 .basic{
-    padding:20px 0;
+    padding:30px 0;
     text-align: center; 
-    background-color: #fafafa;   
+    background-color: white;   
     grid-area: basic;
     box-shadow: 0px 13px 39px -15px #c2c2c2;
     border-radius: 10px 0 0 10px;
@@ -93,7 +114,7 @@ hr{
     border-radius: 10px;
     margin-top: -20px;
     margin-bottom: -20px;
-    padding-top: 40px;
+    padding-top: 50px;
     color: #fafafa;
     text-align: center;
     grid-area: profesional;
@@ -114,10 +135,66 @@ hr{
 }
 
 .master{
-    padding:20px 0;
+    padding:30px 0;
     text-align: center;
-    background-color: #fafafa;
+    background-color: white;
     box-shadow: 0px 13px 39px -15px #c2c2c2;
     grid-area: master;
     border-radius: 0 10px 10px 0;
+}
+
+.buttonp{
+    letter-spacing: 2px;
+    font-size: 13px;
+    border-radius: 4px;
+    color: hsl(237, 63%, 64%);
+    margin: auto;
+    margin-top: 30px;
+    width: 80%;
+    background-color: #fafafa;
+    padding: 15px 0;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.buttonp:hover{
+    background-color: hsl(237, 63%, 64%);
+    border: 1px solid #fafafa;
+    color: #fafafa;
+}
+
+.button{
+    letter-spacing: 2px;
+    font-size: 13px;
+    border-radius: 4px;
+    color: #fafafa;
+    margin: auto;
+    margin-top: 30px;
+    width: 80%;
+    background-image: linear-gradient(to right ,hsl(236, 72%, 79%), hsl(237, 63%, 64%)); ;
+    padding: 15px 0;
+    -webkit-transition: .4s;
+    transition: .9s;
+}
+
+.button:hover{
+    background-image: none;
+    border: 1px solid hsl(237, 63%, 64%);
+    color: hsl(237, 63%, 64%);
+}
+
+@media only screen and (max-width: 400px){
+    .card{
+        width: 100%;
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "basic""profesional" "master";
+        grid-gap: 60px;
+        margin-bottom: 60px;
+        margin-top: -220px;
+    }
+
+    .togle{
+        margin-top: -50px;
+    }
 }
